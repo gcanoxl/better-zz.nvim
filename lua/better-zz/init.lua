@@ -3,6 +3,9 @@ local Config = require("better-zz.config")
 local M = {}
 
 local function get_offsets()
+	if Config.options.mode == 'line' then
+		return Config.options.line
+	end
 	local percentage = Config.options.percentage
 	local height = vim.api.nvim_win_get_height(0) - 1
 	local offsets = math.floor(height * percentage)
