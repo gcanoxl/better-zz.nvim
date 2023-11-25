@@ -5,19 +5,20 @@ local M = {}
 local function get_offsets()
 	local percentage = Config.options.percentage
 	local height = vim.api.nvim_win_get_height(0) - 1
-	local offsets = math.floor(height * (1 - percentage))
+	local offsets = math.floor(height * percentage)
 	return offsets
 end
 
-local function init()
-	local opts = { noremap = true, silent = true }
+
+function M.zz()
 	local offsets = get_offsets()
-	vim.api.nvim_set_keymap("n", "zz", "zz" .. offsets .. "<C-e>", opts)
+	local cmd = 'exec "normal! zt' .. offsets .. '\\<C-y>"'
+	vim.cmd(cmd)
 end
 
 function M.setup(options)
 	Config.setup(options)
-	init()
+	vim.api.nvim_set_keymap("n", "zz", "<cmd>lua require('better-zz').zz()<cr>", { noremap = true, silent = true })
 end
 
 return M
