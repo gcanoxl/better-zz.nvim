@@ -24,7 +24,7 @@ require("better-zz").setup({
     mode = 'line', -- can be either `line` or `percentage`
     percentage = 0.1, -- will be ignored if `mode` is set to `line`
     line = 20 -- will be ignored if `mode` is set to 'percentage'
-    mapping = true -- if this option is set to false, you need map on your own
+    mapping = true -- if this option is set to false, you need to map on your own
 })
 ```
 ## 🚀 mapping on your own
