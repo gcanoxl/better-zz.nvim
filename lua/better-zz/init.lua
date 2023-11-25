@@ -12,7 +12,6 @@ local function get_offsets()
 	return offsets
 end
 
-
 function M.zz()
 	local offsets = get_offsets()
 	local cmd = 'exec "normal! zt' .. offsets .. '\\<C-y>"'

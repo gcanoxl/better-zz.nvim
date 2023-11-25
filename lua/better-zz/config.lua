@@ -1,7 +1,7 @@
 local M = {}
 
 local defaults = {
-	mode = 'percentage'
+	mode = 'percentage',
 	percentage = 0.3,
 	line = 8,
 }
