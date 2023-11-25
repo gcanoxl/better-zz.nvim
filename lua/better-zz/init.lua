@@ -20,7 +20,9 @@ end
 
 function M.setup(options)
 	Config.setup(options)
-	vim.api.nvim_set_keymap("n", "zz", "<cmd>lua require('better-zz').zz()<cr>", { noremap = true, silent = true })
+	if Config.options.mapping then
+		vim.api.nvim_set_keymap("n", "zz", "<cmd>lua require('better-zz').zz()<cr>", { noremap = true, silent = true })
+	end
 end
 
 return M

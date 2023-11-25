@@ -1,6 +1,7 @@
 local M = {}
 
 local defaults = {
+	mapping = true,
 	mode = 'percentage',
 	percentage = 0.3,
 	line = 8,
